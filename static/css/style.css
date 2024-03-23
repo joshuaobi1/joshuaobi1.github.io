@@ -1,0 +1,58 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/* Add styles for the MQTT controls and Share my status button */
+#mqtt-controls input, #mqtt-controls button,
+#custom-message-controls input, #custom-message-controls textarea, #custom-message-controls button,
+#share-status {
+    width: 100%;
+    margin-bottom: 10px; /* Space between controls */
+}
+
+.container {
+    padding-top: 20px;
+    max-width: 980px; /* Width adjusted as needed */
+    margin: auto;
+}
+
+#mapid {
+    height: 500px; /* Height adjusted as needed */
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Space after the map before any additional content */
+}
+
+/* Style for the date range picker */
+#date-range {
+    width: 100%; /* Full width */
+    max-width: 400px; /* Maximum width */
+    margin-bottom: 10px;
+}
+
+/* Style for the search button */
+#search-form button {
+    width: 100%;
+    max-width: 400px; /* To match the date picker width */
+}
+
+/* To make sure the Leaflet control layers menu doesn't overlap with date picker */
+.leaflet-control-layers {
+    margin-top: 50px; /* Margin can be adjusted as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #mapid {
+        height: 300px; /* Smaller height on smaller screens */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    #date-range, #search-form button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Geoweb Application</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>IoT Geolocation Tracker</h1>
+        <p>This application lets you track and share your geolocation using MQTT.</p>
+        
+        <!-- MQTT Connection Controls -->
+        <div id="mqtt-controls">
+            <input type="text" id="mqtt-host" placeholder="Enter MQTT Host" class="form-control mb-2" required>
+            <input type="number" id="mqtt-port" placeholder="Enter MQTT Port" class="form-control mb-2" required>
+            <button id="start-connection" class="btn btn-success mb-2">Start</button>
+            <button id="end-connection" class="btn btn-danger mb-2" disabled>End</button>
+        </div>
+        
+        <!-- Custom Message Controls -->
+        <div id="custom-message-controls" style="display:none;">
+            <input type="text" id="custom-topic" placeholder="Enter MQTT Topic" class="form-control mb-2" required>
+            <textarea id="custom-message" placeholder="Enter message" class="form-control mb-2" required></textarea>
+            <button id="publish-message" class="btn btn-info mb-2">Publish Message</button>
+        </div>
+
+        <!-- Share My Status Button -->
+        <button id="share-status" class="btn btn-primary mb-4">Share My Status</button>
+
+        <div id="mapid" style="height: 600px;"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
